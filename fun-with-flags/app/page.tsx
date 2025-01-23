@@ -1,4 +1,4 @@
-import { Footer, Header, Card } from "./components";
+import { Footer, Header, Card, Grid } from "./components";
 
 const countries = [
   { id: 1, country: "Brazil", capital: "Brasília", region: "South America", population: 213993437 },
@@ -16,7 +16,7 @@ export default function Home() {
     <>
       <Header />
       <main className="flex-1">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <Grid>
         {countries.map((country) => (
           <Card
             key={country.id}
@@ -26,7 +26,7 @@ export default function Home() {
             population={country.population}
           />
         ))}
-        </div>
+        </Grid>
       </main>
       <Footer />
     </>
