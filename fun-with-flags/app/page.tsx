@@ -16,20 +16,17 @@ export default function Home() {
     <>
       <Header />
       <main className="flex-1">
-        <Card
-          id={countries[0].id}
-          country={countries[0].country}
-          capital={countries[0].capital}
-          region={countries[0].region}
-          population={countries[0].population}
-        />
-        <Card
-          id={countries[1].id}
-          country={countries[1].country}
-          capital={countries[1].capital}
-          region={countries[1].region}
-          population={countries[1].population}
-        />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {countries.map((country) => (
+          <Card
+            key={country.id}
+            country={country.country}
+            capital={country.capital}
+            region={country.region}
+            population={country.population}
+          />
+        ))}
+        </div>
       </main>
       <Footer />
     </>
